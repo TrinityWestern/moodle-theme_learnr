@@ -32,6 +32,7 @@ if ($hassiteconfig || has_capability('theme/boost_union:configure', context_syst
     // This settings file here is built in a way that it adds another settings page to this existing settings
     // category. You can add all child-theme-specific settings to this settings page here.
 
+    // Register the page below using the section name expected by Moodle's theme selector.
     // Avoid that the theme settings page is auto-created.
     $settings = null;
 
@@ -39,7 +40,7 @@ if ($hassiteconfig || has_capability('theme/boost_union:configure', context_syst
     if (!$ADMIN->fulltree) {
         // Create Boost Union Child settings page
         // (and allow users with the theme/boost_union:configure capability to access it).
-        $tab = new admin_settingpage('theme_learnr',
+        $tab = new admin_settingpage('themesettinglearnr',
             get_string('configtitle', 'theme_learnr', null, true),
             'theme/boost_union:configure');
         $ADMIN->add('theme_boost_union', $tab);
@@ -63,7 +64,7 @@ if ($hassiteconfig || has_capability('theme/boost_union:configure', context_syst
 
         // Create Boost Union Child settings page with tabs
         // (and allow users with the theme/boost_union:configure capability to access it).
-        $page = new theme_boost_admin_settingspage_tabs('theme_learnr',
+        $page = new theme_boost_admin_settingspage_tabs('themesettinglearnr',
             get_string('configtitle', 'theme_learnr', null, true),
             'theme/boost_union:configure');
 
